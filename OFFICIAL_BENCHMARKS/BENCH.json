@@ -1,0 +1,963 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "NILEARN",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\PSYCHOLOGY\\NILEARN\\UPSTREAM_CLONE",
+    "git": {
+      "head": "8584104bba0abbd0ce3c1b6581ac980f9461ccdd",
+      "url": "https://github.com/nilearn/nilearn",
+      "branch": "main",
+      "committed_at": "2026-10-02T06:31:41+02:00"
+    }
+  },
+  "metrics": {
+    "files_total": 1265,
+    "source_files_scanned": 470,
+    "lines_of_code": 170499,
+    "languages": {
+      ".py": 491,
+      ".png": 411,
+      ".rst": 163,
+      ".gz": 31,
+      ".jinja": 27,
+      ".txt": 22,
+      ".js": 16,
+      "(none)": 13,
+      ".json": 12,
+      ".md": 11,
+      ".csv": 11,
+      ".sh": 9,
+      ".svg": 8,
+      ".tsv": 7,
+      ".css": 5
+    }
+  },
+  "licence": {
+    "spdx": "BSD-3-Clause",
+    "class": "A",
+    "source_file": "LICENSE",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 17,
+    "unique": 17,
+    "by_ecosystem": {
+      "npm": 8,
+      "pypi": 9
+    },
+    "list": [
+      {
+        "ecosystem": "npm",
+        "name": "@niivue/niivue",
+        "version": "0.68.1",
+        "source_file": "package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "jquery",
+        "version": "3.6.0",
+        "source_file": "package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "plotly.js-gl3d-dist-min",
+        "version": "1.50.1",
+        "source_file": "package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "express",
+        "version": "^5.2.1",
+        "source_file": "package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "jest",
+        "version": "^30.4.2",
+        "source_file": "package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "pixelmatch",
+        "version": "^5.3.0",
+        "source_file": "package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "pngjs",
+        "version": "^7.0.0",
+        "source_file": "package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "puppeteer",
+        "version": "^25.3.0",
+        "source_file": "package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "joblib",
+        "version": ">=1.5.0",
+        "source_file": "pyproject.toml",
+        "raw": "joblib>=1.5.0"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "nibabel",
+        "version": ">=5.2.0",
+        "source_file": "pyproject.toml",
+        "raw": "nibabel>=5.2.0"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "numpy",
+        "version": ">=1.26.0",
+        "source_file": "pyproject.toml",
+        "raw": "numpy>=1.26.0"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "pandas",
+        "version": ">=2.3.0",
+        "source_file": "pyproject.toml",
+        "raw": "pandas>=2.3.0"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "requests",
+        "version": ">=2.33.0",
+        "source_file": "pyproject.toml",
+        "raw": "requests>=2.33.0"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "scikit-learn",
+        "version": ">=1.6.0",
+        "source_file": "pyproject.toml",
+        "raw": "scikit-learn>=1.6.0"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "jinja2",
+        "version": ">=3.1.6",
+        "source_file": "pyproject.toml",
+        "raw": "jinja2>=3.1.6"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "scipy",
+        "version": ">=1.11.1",
+        "source_file": "pyproject.toml",
+        "raw": "scipy>=1.11.1"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "packaging",
+        "version": ">=26.0.0",
+        "source_file": "pyproject.toml",
+        "raw": "packaging>=26.0.0"
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 147,
+    "files_with_findings": 112,
+    "severity": {
+      "high": 7,
+      "medium": 57,
+      "low": 83
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "nilearn/datasets/_utils.py",
+            "line": 54,
+            "cwe": "CWE-327",
+            "snippet": "m = hashlib.md5()"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/datasets/tests/test_neurovault.py",
+            "line": 89,
+            "cwe": "CWE-327",
+            "snippet": "hashlib.sha1(bytes(img_id)).hexdigest()[:4] for img_id in image_ids"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 7,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "nilearn/_estimator_checks/nilearn_checks.py",
+            "line": 1155,
+            "cwe": "CWE-502",
+            "snippet": "unpickled_estimator = pickle.loads(pickled_estimator)"
+          },
+          {
+            "severity": "high",
+            "file": "nilearn/_assets/js/common-surface-plot-utils.js",
+            "line": 116,
+            "cwe": "CWE-78",
+            "snippet": "const height = Math.min($(window).outerHeight() * 0.9,"
+          },
+          {
+            "severity": "high",
+            "file": "nilearn/image/image.py",
+            "line": 2005,
+            "cwe": "CWE-95",
+            "snippet": "result[k] = eval(formula, data_dict[k])"
+          },
+          {
+            "severity": "high",
+            "file": "nilearn/glm/contrasts.py",
+            "line": 323,
+            "cwe": "CWE-95",
+            "snippet": "contrast_vector = eye_design.eval(  # type: ignore[union-attr, assignment]"
+          },
+          {
+            "severity": "high",
+            "file": "maint_tools/citation_cff_maint.py",
+            "line": 52,
+            "cwe": "CWE-502",
+            "snippet": "citation = yaml.load(f)"
+          },
+          {
+            "severity": "high",
+            "file": "doc/conf.py",
+            "line": 169,
+            "cwe": "CWE-78",
+            "snippet": "os.popen(\"git describe --tags\").read().strip(),"
+          },
+          {
+            "severity": "high",
+            "file": "build_tools/github/build_type.py",
+            "line": 41,
+            "cwe": "CWE-78",
+            "snippet": "cmd, shell=True, capture_output=capture_output, text=text, check=check"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 71,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "nilearn/masking.py",
+            "line": 290,
+            "cwe": "CWE-",
+            "snippet": "# XXX should the masks be coerced to int before addition?"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/_base.py",
+            "line": 39,
+            "cwe": "CWE-",
+            "snippet": "# TODO (sklearn >= 1.7) remove *args from signature"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/_utils/cache_mixin.py",
+            "line": 36,
+            "cwe": "CWE-",
+            "snippet": "# TODO make Path the default here"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/_utils/data_gen.py",
+            "line": 28,
+            "cwe": "CWE-",
+            "snippet": "# TODO get legal_confounds out of private testing module"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/_utils/segmentation.py",
+            "line": 372,
+            "cwe": "CWE-",
+            "snippet": "# TODO (scipy to >= 1.12.0)"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/_utils/tests/test_data_gen.py",
+            "line": 125,
+            "cwe": "CWE-",
+            "snippet": "# TODO use regex"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/_utils/tests/test_niimg.py",
+            "line": 99,
+            "cwe": "CWE-",
+            "snippet": "# TODO (numpy > 2.*) deal with this DeprecationWarning"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/_estimator_checks/nilearn_checks.py",
+            "line": 455,
+            "cwe": "CWE-",
+            "snippet": "# TODO"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/_estimator_checks/sklearn_expected_failed_checks.py",
+            "line": 70,
+            "cwe": "CWE-",
+            "snippet": "\"check_estimator_sparse_array\": \"TODO\","
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/_estimator_checks/tests/test_estimator_checks_nilearn.py",
+            "line": 53,
+            "cwe": "CWE-",
+            "snippet": "from nilearn.maskers.tests.conftest import sklearn_surf_label_img  # TODO move"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/_assets/js/common-surface-plot-utils.js",
+            "line": 154,
+            "cwe": "CWE-",
+            "snippet": "// hack to get a colorbar"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/utils/discovery.py",
+            "line": 125,
+            "cwe": "CWE-",
+            "snippet": "# TODO: add GLM?"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/surface/surface.py",
+            "line": 47,
+            "cwe": "CWE-",
+            "snippet": "# TODO those are properties are for compatibility with plot_surf_img."
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/surface/tests/test_surface.py",
+            "line": 1354,
+            "cwe": "CWE-",
+            "snippet": "# TODO check that clusters with same number of faces do not get same label"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/reporting/get_clusters_table.py",
+            "line": 218,
+            "cwe": "CWE-",
+            "snippet": "# TODO (nilearn >= 0.17.0) simplify overloads"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/reporting/mixin.py",
+            "line": 195,
+            "cwe": "CWE-",
+            "snippet": "# TODO clean up docstring from RST formatting"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/reporting/utils.py",
+            "line": 13,
+            "cwe": "CWE-",
+            "snippet": "# TODO move this entire module in a place"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/reporting/tests/test_get_clusters_table.py",
+            "line": 160,
+            "cwe": "CWE-",
+            "snippet": "TODO (nilearn >= 0.17.0) remove test."
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/reporting/tests/_testing.py",
+            "line": 119,
+            "cwe": "CWE-",
+            "snippet": "# TODO"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/regions/signal_extraction.py",
+            "line": 320,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Make a special case for list of strings"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/plotting/img_comparison.py",
+            "line": 486,
+            "cwe": "CWE-",
+            "snippet": "# TODO (nilearn >= 0.15) remove ALL 'standardize=None'"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/plotting/tests/test_js_plotting_utils.py",
+            "line": 68,
+            "cwe": "CWE-",
+            "snippet": "# TODO some issues with niivue on windows"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/plotting/image/img_plotting.py",
+            "line": 2118,
+            "cwe": "CWE-",
+            "snippet": "# TODO (nilearn >= 0.15) remove standardize=None"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/plotting/displays/_axes.py",
+            "line": 609,
+            "cwe": "CWE-",
+            "snippet": "# Hacky way to put the strongest connections on top of the weakest"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/plotting/displays/_slicers.py",
+            "line": 1013,
+            "cwe": "CWE-",
+            "snippet": "# XXX: should we keep this heuristic?"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 55,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "nilearn/masking.py",
+            "line": 209,
+            "cwe": "CWE-1188",
+            "snippet": "default=True."
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/signal.py",
+            "line": 506,
+            "cwe": "CWE-1188",
+            "snippet": "default=True."
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/_utils/data_gen.py",
+            "line": 1054,
+            "cwe": "CWE-1188",
+            "snippet": "with_derivatives : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/_utils/docs.py",
+            "line": 43,
+            "cwe": "CWE-1188",
+            "snippet": "annotate : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/_utils/niimg.py",
+            "line": 162,
+            "cwe": "CWE-1188",
+            "snippet": "accept_non_finite : :obj:`bool`, default = True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/_utils/param_validation.py",
+            "line": 48,
+            "cwe": "CWE-1188",
+            "snippet": "two_sided : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/_utils/segmentation.py",
+            "line": 198,
+            "cwe": "CWE-1188",
+            "snippet": "copy : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/utils/tags.py",
+            "line": 36,
+            "cwe": "CWE-1188",
+            "snippet": "niimg_like : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/regions/parcellations.py",
+            "line": 262,
+            "cwe": "CWE-1188",
+            "snippet": "standardize_confounds : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/regions/region_extractor.py",
+            "line": 414,
+            "cwe": "CWE-1188",
+            "snippet": "reports : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/plotting/html_connectome.py",
+            "line": 136,
+            "cwe": "CWE-1188",
+            "snippet": "symmetric_cmap : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/plotting/html_stat_map.py",
+            "line": 664,
+            "cwe": "CWE-1188",
+            "snippet": "default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/plotting/img_comparison.py",
+            "line": 73,
+            "cwe": "CWE-1188",
+            "snippet": "plot_hist : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/plotting/_utils.py",
+            "line": 255,
+            "cwe": "CWE-1188",
+            "snippet": "symmetric_cbar : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/plotting/surface/html_surface.py",
+            "line": 238,
+            "cwe": "CWE-1188",
+            "snippet": "symmetric_cmap : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/plotting/surface/surf_plotting.py",
+            "line": 156,
+            "cwe": "CWE-1188",
+            "snippet": "default=True."
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/plotting/matrix/matrix_plotting.py",
+            "line": 225,
+            "cwe": "CWE-1188",
+            "snippet": "default=True."
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/plotting/image/img_plotting.py",
+            "line": 375,
+            "cwe": "CWE-1188",
+            "snippet": "default=True."
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/plotting/displays/_axes.py",
+            "line": 387,
+            "cwe": "CWE-1188",
+            "snippet": "plot_abs : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/plotting/displays/_slicers.py",
+            "line": 1037,
+            "cwe": "CWE-1188",
+            "snippet": "left_right : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/mass_univariate/permuted_least_squares.py",
+            "line": 100,
+            "cwe": "CWE-1188",
+            "snippet": "intercept_test : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/mass_univariate/_utils.py",
+            "line": 42,
+            "cwe": "CWE-1188",
+            "snippet": "two_sided_test : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/maskers/base_masker.py",
+            "line": 431,
+            "cwe": "CWE-1188",
+            "snippet": "copy : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/maskers/multi_nifti_labels_masker.py",
+            "line": 86,
+            "cwe": "CWE-1188",
+            "snippet": "reports : :obj:`bool`, default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/maskers/multi_nifti_maps_masker.py",
+            "line": 39,
+            "cwe": "CWE-1188",
+            "snippet": "allow_overlap : :obj:`bool`, default=True"
+          }
+        ]
+      },
+      "A06-VulnerableComponents": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "asv_benchmarks/check_dependencies_in_sync.py",
+            "line": 309,
+            "cwe": "CWE-1104",
+            "snippet": "min = [\"numpy==1.26.0\", \"scikit-learn==1.6.0,!=1.7.0\"]"
+          }
+        ]
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 11,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "tests/js/template.js",
+            "line": 21,
+            "cwe": "CWE-319",
+            "snippet": "await page.goto('http://localhost:8080/' + 'generated/html/' + file)"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/signal.py",
+            "line": 967,
+            "cwe": "CWE-319",
+            "snippet": "http://en.wikipedia.org/wiki/Discrete_cosine_transform DCT-II"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/_utils/html_document.py",
+            "line": 61,
+            "cwe": "CWE-319",
+            "snippet": "url = f\"http://localhost:{port}/index.html\""
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/plotting/image/img_plotting.py",
+            "line": 3,
+            "cwe": "CWE-319",
+            "snippet": "See http://nilearn.github.io/stable/manipulating_images/input_output.html"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/image/resampling.py",
+            "line": 3,
+            "cwe": "CWE-319",
+            "snippet": "See http://nilearn.github.io/stable/manipulating_images/input_output.html"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/datasets/func.py",
+            "line": 137,
+            "cwe": "CWE-319",
+            "snippet": "http://www.pymvpa.org/tutorial.html"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/datasets/tests/test_atlas.py",
+            "line": 91,
+            "cwe": "CWE-319",
+            "snippet": "url = \"http://example.com/craddock_atlas\""
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/datasets/tests/test_neurovault.py",
+            "line": 336,
+            "cwe": "CWE-319",
+            "snippet": "\"http://BAD_URL\", max_results=3, local_filter=lambda r: True"
+          },
+          {
+            "severity": "low",
+            "file": "nilearn/datasets/tests/test_utils.py",
+            "line": 483,
+            "cwe": "CWE-319",
+            "snippet": "url = \"http://foo/temp.txt\""
+          },
+          {
+            "severity": "low",
+            "file": "doc/conf.py",
+            "line": 238,
+            "cwe": "CWE-319",
+            "snippet": "r\"http://humanconnectome.org/.*\": r\"https://store.humanconnectome.org/.*\","
+          },
+          {
+            "severity": "low",
+            "file": "doc/sphinxext/github_link.py",
+            "line": 32,
+            "cwe": "CWE-319",
+            "snippet": "...     url_fmt=\"http://hg.python.org/cpython/file/{revision}/Lib/{package}/{path}#L{lineno}\","
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 4,
+    "files_with_findings": 4,
+    "severity": {
+      "high": 0,
+      "medium": 4,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 4,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "nilearn/plotting/image/utils.py",
+            "line": 22,
+            "cwe": "CWE-1336",
+            "snippet": "class _MNI152Template(SpatialImage):"
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/maskers/masker_validation.py",
+            "line": 140,
+            "cwe": "CWE-1336",
+            "snippet": "warning_msg = Template("
+          },
+          {
+            "severity": "medium",
+            "file": "nilearn/decomposition/_base.py",
+            "line": 82,
+            "cwe": "CWE-1336",
+            "snippet": "Template("
+          },
+          {
+            "severity": "medium",
+            "file": "doc/get_ci_workflows_description.py",
+            "line": 94,
+            "cwe": "CWE-1336",
+            "snippet": "template = Template(template_content)"
+          }
+        ]
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:c8748ab0-520b-5a0f-be47-235bd3dc3976",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T06:33:50Z",
+      "component": {
+        "type": "application",
+        "name": "NILEARN",
+        "version": "8584104bba0a",
+        "bom-ref": "pkg:generic/anticloud/NILEARN@8584104bba0a",
+        "purl": "pkg:generic/anticloud/NILEARN@8584104bba0a",
+        "licenses": [
+          {
+            "license": {
+              "id": "BSD-3-Clause"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "8584104bba0abbd0ce3c1b6581ac980f9461ccdd"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/nilearn/nilearn"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "@niivue/niivue",
+        "version": "0.68.1",
+        "purl": "pkg:npm/@niivue/niivue@0.68.1",
+        "bom-ref": "npm/@niivue/niivue@0.68.1"
+      },
+      {
+        "type": "library",
+        "name": "jquery",
+        "version": "3.6.0",
+        "purl": "pkg:npm/jquery@3.6.0",
+        "bom-ref": "npm/jquery@3.6.0"
+      },
+      {
+        "type": "library",
+        "name": "plotly.js-gl3d-dist-min",
+        "version": "1.50.1",
+        "purl": "pkg:npm/plotly.js-gl3d-dist-min@1.50.1",
+        "bom-ref": "npm/plotly.js-gl3d-dist-min@1.50.1"
+      },
+      {
+        "type": "library",
+        "name": "express",
+        "version": "^5.2.1",
+        "purl": "pkg:npm/express@^5.2.1",
+        "bom-ref": "npm/express@^5.2.1"
+      },
+      {
+        "type": "library",
+        "name": "jest",
+        "version": "^30.4.2",
+        "purl": "pkg:npm/jest@^30.4.2",
+        "bom-ref": "npm/jest@^30.4.2"
+      },
+      {
+        "type": "library",
+        "name": "pixelmatch",
+        "version": "^5.3.0",
+        "purl": "pkg:npm/pixelmatch@^5.3.0",
+        "bom-ref": "npm/pixelmatch@^5.3.0"
+      },
+      {
+        "type": "library",
+        "name": "pngjs",
+        "version": "^7.0.0",
+        "purl": "pkg:npm/pngjs@^7.0.0",
+        "bom-ref": "npm/pngjs@^7.0.0"
+      },
+      {
+        "type": "library",
+        "name": "puppeteer",
+        "version": "^25.3.0",
+        "purl": "pkg:npm/puppeteer@^25.3.0",
+        "bom-ref": "npm/puppeteer@^25.3.0"
+      },
+      {
+        "type": "library",
+        "name": "joblib",
+        "version": ">=1.5.0",
+        "purl": "pkg:pypi/joblib@1.5.0",
+        "bom-ref": "pypi/joblib@>=1.5.0"
+      },
+      {
+        "type": "library",
+        "name": "nibabel",
+        "version": ">=5.2.0",
+        "purl": "pkg:pypi/nibabel@5.2.0",
+        "bom-ref": "pypi/nibabel@>=5.2.0"
+      },
+      {
+        "type": "library",
+        "name": "numpy",
+        "version": ">=1.26.0",
+        "purl": "pkg:pypi/numpy@1.26.0",
+        "bom-ref": "pypi/numpy@>=1.26.0"
+      },
+      {
+        "type": "library",
+        "name": "pandas",
+        "version": ">=2.3.0",
+        "purl": "pkg:pypi/pandas@2.3.0",
+        "bom-ref": "pypi/pandas@>=2.3.0"
+      },
+      {
+        "type": "library",
+        "name": "requests",
+        "version": ">=2.33.0",
+        "purl": "pkg:pypi/requests@2.33.0",
+        "bom-ref": "pypi/requests@>=2.33.0"
+      },
+      {
+        "type": "library",
+        "name": "scikit-learn",
+        "version": ">=1.6.0",
+        "purl": "pkg:pypi/scikit-learn@1.6.0",
+        "bom-ref": "pypi/scikit-learn@>=1.6.0"
+      },
+      {
+        "type": "library",
+        "name": "jinja2",
+        "version": ">=3.1.6",
+        "purl": "pkg:pypi/jinja2@3.1.6",
+        "bom-ref": "pypi/jinja2@>=3.1.6"
+      },
+      {
+        "type": "library",
+        "name": "scipy",
+        "version": ">=1.11.1",
+        "purl": "pkg:pypi/scipy@1.11.1",
+        "bom-ref": "pypi/scipy@>=1.11.1"
+      },
+      {
+        "type": "library",
+        "name": "packaging",
+        "version": ">=26.0.0",
+        "purl": "pkg:pypi/packaging@26.0.0",
+        "bom-ref": "pypi/packaging@>=26.0.0"
+      }
+    ]
+  },
+  "elapsed_seconds": 175.27
+}

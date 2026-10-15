@@ -1,0 +1,158 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:c8748ab0-520b-5a0f-be47-235bd3dc3976",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-05T17:37:35Z",
+    "component": {
+      "type": "application",
+      "name": "NILEARN",
+      "version": "8584104bba0a",
+      "bom-ref": "pkg:generic/anticloud/NILEARN@8584104bba0a",
+      "purl": "pkg:generic/anticloud/NILEARN@8584104bba0a",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "8584104bba0abbd0ce3c1b6581ac980f9461ccdd"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/nilearn/nilearn"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "@niivue/niivue",
+      "version": "0.68.1",
+      "purl": "pkg:npm/@niivue/niivue@0.68.1",
+      "bom-ref": "npm/@niivue/niivue@0.68.1"
+    },
+    {
+      "type": "library",
+      "name": "jquery",
+      "version": "3.6.0",
+      "purl": "pkg:npm/jquery@3.6.0",
+      "bom-ref": "npm/jquery@3.6.0"
+    },
+    {
+      "type": "library",
+      "name": "plotly.js-gl3d-dist-min",
+      "version": "1.50.1",
+      "purl": "pkg:npm/plotly.js-gl3d-dist-min@1.50.1",
+      "bom-ref": "npm/plotly.js-gl3d-dist-min@1.50.1"
+    },
+    {
+      "type": "library",
+      "name": "express",
+      "version": "^5.2.1",
+      "purl": "pkg:npm/express@^5.2.1",
+      "bom-ref": "npm/express@^5.2.1"
+    },
+    {
+      "type": "library",
+      "name": "jest",
+      "version": "^30.4.2",
+      "purl": "pkg:npm/jest@^30.4.2",
+      "bom-ref": "npm/jest@^30.4.2"
+    },
+    {
+      "type": "library",
+      "name": "pixelmatch",
+      "version": "^5.3.0",
+      "purl": "pkg:npm/pixelmatch@^5.3.0",
+      "bom-ref": "npm/pixelmatch@^5.3.0"
+    },
+    {
+      "type": "library",
+      "name": "pngjs",
+      "version": "^7.0.0",
+      "purl": "pkg:npm/pngjs@^7.0.0",
+      "bom-ref": "npm/pngjs@^7.0.0"
+    },
+    {
+      "type": "library",
+      "name": "puppeteer",
+      "version": "^25.3.0",
+      "purl": "pkg:npm/puppeteer@^25.3.0",
+      "bom-ref": "npm/puppeteer@^25.3.0"
+    },
+    {
+      "type": "library",
+      "name": "joblib",
+      "version": ">=1.5.0",
+      "purl": "pkg:pypi/joblib@1.5.0",
+      "bom-ref": "pypi/joblib@>=1.5.0"
+    },
+    {
+      "type": "library",
+      "name": "nibabel",
+      "version": ">=5.2.0",
+      "purl": "pkg:pypi/nibabel@5.2.0",
+      "bom-ref": "pypi/nibabel@>=5.2.0"
+    },
+    {
+      "type": "library",
+      "name": "numpy",
+      "version": ">=1.26.0",
+      "purl": "pkg:pypi/numpy@1.26.0",
+      "bom-ref": "pypi/numpy@>=1.26.0"
+    },
+    {
+      "type": "library",
+      "name": "pandas",
+      "version": ">=2.3.0",
+      "purl": "pkg:pypi/pandas@2.3.0",
+      "bom-ref": "pypi/pandas@>=2.3.0"
+    },
+    {
+      "type": "library",
+      "name": "requests",
+      "version": ">=2.33.0",
+      "purl": "pkg:pypi/requests@2.33.0",
+      "bom-ref": "pypi/requests@>=2.33.0"
+    },
+    {
+      "type": "library",
+      "name": "scikit-learn",
+      "version": ">=1.6.0",
+      "purl": "pkg:pypi/scikit-learn@1.6.0",
+      "bom-ref": "pypi/scikit-learn@>=1.6.0"
+    },
+    {
+      "type": "library",
+      "name": "jinja2",
+      "version": ">=3.1.6",
+      "purl": "pkg:pypi/jinja2@3.1.6",
+      "bom-ref": "pypi/jinja2@>=3.1.6"
+    },
+    {
+      "type": "library",
+      "name": "scipy",
+      "version": ">=1.11.1",
+      "purl": "pkg:pypi/scipy@1.11.1",
+      "bom-ref": "pypi/scipy@>=1.11.1"
+    },
+    {
+      "type": "library",
+      "name": "packaging",
+      "version": ">=26.0.0",
+      "purl": "pkg:pypi/packaging@26.0.0",
+      "bom-ref": "pypi/packaging@>=26.0.0"
+    }
+  ]
+}
